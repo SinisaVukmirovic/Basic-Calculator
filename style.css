@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background: #343434;
+    margin: 5rem;
+    font-family: Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.title {
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem; 
+}
+
+.calc {
+    /* max-width: 400px; */
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    grid-template-areas:
+        "disp disp"
+        "cl-bc cl-bc"
+        "nums oprs";
+}
+
+input.display {
+    text-align: right;
+    grid-area: disp;
+    height: 4rem;
+    background: #ddd;
+    border-radius: 7px;
+    padding: .5rem 1.5rem;
+    color: #000;
+    font-size: 2.5rem;
+}
+
+.clear-back {
+    grid-area: cl-bc;
+    display: grid;
+    grid-gap:  0 1rem;
+    grid-template-areas: 
+        "btn-cle btn-bac";
+}
+    .clear-back .btn-cl-bc {
+        background: coral;
+        color: #000;
+        padding: .1rem .5rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        
+    }
+
+.numbers {
+    grid-area: nums;
+    display: grid;
+    grid-gap: .5rem;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-areas: 
+        "btn7 btn8 btn9"
+        "btn4 btn5 btn6"
+        "btn1 btn2 btn3"
+        "btn0 btn0 btncoma";
+}
+
+.operators {
+    grid-area: oprs;
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-areas: 
+        "btn-opp btn-clp"
+        "btn-mul btn-div"
+        "btn-plu btn-min"
+        "btn-equ btn-equ";
+}
+
+    .operators .btn {
+        background: #555;
+        border: solid 2px #999;
+        color: coral;
+    }
+
+/* Equal btn cannot have bn class */
+.btn-equ {
+    padding: .7rem 1.5rem;
+    background: #555;
+    border: solid 2px #999;
+    color: coral;
+    font-size: 2rem;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+    .btn-equ:hover {
+        border: solid 2px #fff;
+    }
+    .btn-equ:active {
+        transform: scale(.95);
+    }
+
+.btn, .btn-cl-bc {
+    padding: .7rem 1.5rem;
+    background: #777;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    border: solid 2px #aaa;
+    transition: all .3s;
+}
+    .btn:hover, .btn-cl-bc:hover {
+        border: solid 2px #fff;
+    }
+    .btn:active, .btn-cl-bc:active {
+        transform: scale(.95);
+    }
+
+/* numbers btns */
+.btn-9 {
+    grid-area: btn9;
+}
+.btn-8 {
+    grid-area: btn8;
+}
+.btn-7 {
+    grid-area: btn7;
+}
+.btn-6 {
+    grid-area: btn6;
+}
+.btn-5 {
+    grid-area: btn5;
+}
+
+.btn-4 {
+    grid-area: btn4;
+}
+.btn-3 {
+    grid-area: btn3;
+}
+.btn-2 {
+    grid-area: btn2;
+}
+.btn-1 {
+    grid-area: btn1;
+}
+.btn-0 {
+    grid-area: btn0;
+}
+.btn-coma {
+    grid-area: btncoma;
+}
+
+/* operator btns */
+.btn-opp {
+    grid-area: btn-opp;
+}
+.btn-clp {
+    grid-area: btn-clp;
+}
+.btn-mul {
+    grid-area: btn-mul;
+}
+.btn-div {
+    grid-area: btn-div;
+}
+.btn-plu {
+    grid-area: btn-plu;
+}
+.btn-min {
+    grid-area: btn-min;
+}
+.btn-equ {
+    grid-area: btn-equ;
+}
+
+/* clear and back btns */
+.btn-cle {
+    grid-area: btn-cle;
+}
+.btn-bac {
+    grid-area: btn-bac;
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 14px;
+    }
+    .title {
+        font-size: 2.6rem;
+        text-align: center;
+        margin-bottom: 2rem; 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+    .title {
+        font-size: 2.3rem;
+    }
+}
